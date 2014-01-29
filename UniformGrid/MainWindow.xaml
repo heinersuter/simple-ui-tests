@@ -1,0 +1,16 @@
+﻿<Window x:Class="UniformGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <UniformGrid VerticalAlignment="Top" Columns="2">
+        <TextBox Text="Hello" />
+        <TextBox Text="World" />
+        <TextBox Text="XXXX" />
+        <TextBox Text="YYYY" />
+        <TextBox Text="ZZZZ" />
+        <TextBox Text="AAAA" />
+        <TextBox Text="1" />
+        <TextBox Text="2" />
+        <TextBox Text="3" />
+    </UniformGrid>
+</Window>

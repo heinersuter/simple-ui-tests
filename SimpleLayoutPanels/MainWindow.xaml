@@ -1,0 +1,46 @@
+﻿<Window x:Class="SimpleLayoutPanels.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:simpleLayoutPanels="clr-namespace:SimpleLayoutPanels"
+    Title="SimpleLayoutPanel Test" Height="350" Width="525">
+    <TabControl TabStripPlacement="Left">
+        <TabItem Header="HorizontalStretchLeft">
+            <simpleLayoutPanels:SimpleStretchPanel Mode="HorizontalStretchLeft">
+                <Button Content="Stretch"/>
+                <Button Content="Minimal"/>
+            </simpleLayoutPanels:SimpleStretchPanel>
+        </TabItem>
+        <TabItem Header="HorizontalStretchCenter">
+            <simpleLayoutPanels:SimpleStretchPanel Mode="HorizontalStretchCenter">
+                <Button Content="Minimal"/>
+                <Button Content="Stretch"/>
+                <Button Content="Minimal"/>
+            </simpleLayoutPanels:SimpleStretchPanel>
+        </TabItem>
+        <TabItem Header="HorizontalStretchRight">
+            <simpleLayoutPanels:SimpleStretchPanel Mode="HorizontalStretchRight">
+                <Button Content="Minimal"/>
+                <Button Content="Stretch"/>
+            </simpleLayoutPanels:SimpleStretchPanel>
+        </TabItem>
+        <TabItem Header="VerticalStretchTop">
+            <simpleLayoutPanels:SimpleStretchPanel Mode="VerticalStretchTop">
+                <Button Content="Stretch"/>
+                <Button Content="Minimal"/>
+            </simpleLayoutPanels:SimpleStretchPanel>
+        </TabItem>
+        <TabItem Header="VerticalStretchCenter">
+            <simpleLayoutPanels:SimpleStretchPanel Mode="VerticalStretchCenter">
+                <Button Content="Minimal"/>
+                <Button Content="Stretch"/>
+                <Button Content="Minimal"/>
+            </simpleLayoutPanels:SimpleStretchPanel>
+        </TabItem>
+        <TabItem Header="VerticalStretchBottom">
+            <simpleLayoutPanels:SimpleStretchPanel Mode="VerticalStretchBottom">
+                <Button Content="Minimal"/>
+                <Button Content="Stretch"/>
+            </simpleLayoutPanels:SimpleStretchPanel>
+        </TabItem>
+    </TabControl>
+</Window>

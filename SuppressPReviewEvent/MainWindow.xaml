@@ -1,0 +1,17 @@
+﻿<Window x:Class="SuppressPreviewEvent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SuppressPreviewEvent="clr-namespace:SuppressPreviewEvent" Title="Suppress Tunneling" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <SuppressPreviewEvent:UserControl1 Grid.Row="0" />
+        <TextBox Grid.Row="1" Width="128" VerticalAlignment="Center" Margin="8" />
+        <Button Grid.Row="2" Content="Default" IsDefault="True" HorizontalAlignment="Right" MinWidth="80" Margin="8" Click="OnButtonClick" />
+
+    </Grid>
+</Window>

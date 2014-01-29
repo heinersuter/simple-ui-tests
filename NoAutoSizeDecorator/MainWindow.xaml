@@ -1,0 +1,56 @@
+﻿<Window x:Class="NoAutoSizeDecorator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:NoAutoSizeDecorator="clr-namespace:NoAutoSizeDecorator" Title="MainWindow" SizeToContent="WidthAndHeight">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--<NoAutoSizeDecorator:NoAutoSizeDecoratorTest KeepWidth="True" KeepHeight="True">
+            <Button Content="{Binding ButtonText}" Click="OnButtonClick" />
+        </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>-->
+
+            <!--<NoAutoSizeDecorator:NoAutoSizeDecoratorTest MinWidth="60" MinHeight="22">
+                <Button Content="{Binding ButtonText}" Click="OnButtonClick" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>-->
+
+            <!--<NoAutoSizeDecorator:NoAutoSizeDecoratorTest KeepWidth="True" MinHeight="22">
+                <Button Content="{Binding ButtonText}" Click="OnButtonClick" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>-->
+
+            <!--<NoAutoSizeDecorator:NoAutoSizeDecoratorTest MinWidth="10" KeepHeight="True">
+            <Button Content="{Binding ButtonText}" Click="OnButtonClick" />
+        </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>-->
+
+            <NoAutoSizeDecorator:NoAutoSizeDecoratorTest Grid.Row="4" MinWidth="256" MinHeight="80" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" Text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#x0a;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&#x0a;ccccccccccccccccccccccccccccccccccccccccccccccc&#x0a;ddd&#x0a;eeee&#x0a;fffffff&#x0a;ggggg&#x0a;hhhhhh&#x0a;iiiiiii&#x0a;jjjjjjj" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>
+
+            <!--<Button Grid.Row="0" Content="{Binding ButtonText}" Click="OnButtonClick" Width="60" Height="22" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+            <NoAutoSizeDecorator:NoAutoSizeDecoratorTest Grid.Row="1" MinWidth="256" MinHeight="80" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" Text="{Binding ButtonText}" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>
+
+            <NoAutoSizeDecorator:NoAutoSizeDecoratorTest Grid.Row="2" MinWidth="196" KeepHeight="True" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" Text="{Binding ButtonText}" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>
+
+            <NoAutoSizeDecorator:NoAutoSizeDecoratorTest Grid.Row="3" KeepWidth="True" MinHeight="64" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" Text="{Binding ButtonText}" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>
+
+            <NoAutoSizeDecorator:NoAutoSizeDecoratorTest Grid.Row="4" KeepWidth="True" KeepHeight="True" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" Text="{Binding ButtonText}" />
+            </NoAutoSizeDecorator:NoAutoSizeDecoratorTest>-->
+
+        </Grid>
+    </ScrollViewer>
+</Window>

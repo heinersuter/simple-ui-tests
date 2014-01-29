@@ -1,0 +1,83 @@
+﻿<Window x:Class="TextBoxWithEllipsis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" SizeToContent="Height" Width="160" Background="Aqua">
+
+    <Window.Resources>
+
+        <Style x:Key="TextBoxWithEllipsis" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <TextBox Text="{TemplateBinding Text}">
+                            <TextBox.Resources>
+                                <VisualBrush x:Key="backgroundBrush" Stretch="None" AlignmentX="Left">
+                                    <VisualBrush.Visual>
+                                        <Label Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                            Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                            Padding="3.7 0 2.7 0"
+                                            VerticalContentAlignment="Center"
+                                            Background="White">
+                                            <TextBlock Text="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" 
+                                                TextTrimming="CharacterEllipsis" />
+                                        </Label>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Setter Property="Background" Value="{StaticResource backgroundBrush}" />
+                                    <Setter Property="Foreground" Value="Transparent" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsFocused" Value="True">
+                                            <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource AncestorType=TextBox}}" />
+                                            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=TextBox}}" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+
+        <TextBox x:Name="_masterTextBox" Text="123 456 789012 345 678 901 234 567 890" Margin="8" />
+
+        <TextBox Text="{Binding Text, ElementName=_masterTextBox, UpdateSourceTrigger=PropertyChanged}" Margin="8">
+            <TextBox.Resources>
+                <VisualBrush x:Key="backgroundBrush" Stretch="None" AlignmentX="Left">
+                    <VisualBrush.Visual>
+                        <Label Width="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=ActualWidth}"
+                            Height="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=ActualHeight}"
+                            Padding="3.7,0,2.7,0" Background="White" VerticalContentAlignment="Center">
+                            <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=Text}"
+                                TextTrimming="CharacterEllipsis"
+                                FontFamily="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=FontFamily}"
+                                FontSize="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=FontSize}"
+                                FontWeight="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=FontWeight}"/>
+                        </Label>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Background" Value="{StaticResource backgroundBrush}" />
+                    <Setter Property="Foreground" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=Foreground}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox Text="{Binding Text, ElementName=_masterTextBox, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxWithEllipsis}" Margin="8" />
+
+        <TextBox FontSize="15" Background="LightGray" Foreground="Red" IsReadOnly="True" Text="{Binding Text, ElementName=_masterTextBox, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxWithEllipsis}" Margin="8" />
+
+    </StackPanel>
+</Window>

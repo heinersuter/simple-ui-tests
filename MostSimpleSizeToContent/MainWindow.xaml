@@ -1,0 +1,16 @@
+﻿<Window x:Class="MostSimpleSizeToContent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Commons="clr-namespace:Commons;assembly=Commons"
+        Title="Most Simple Size to Content" 
+        SizeToContent="WidthAndHeight">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        
+        <HeaderedContentControl Header="Intupt field:" Style="{StaticResource HeaderOnTheLeftStyle}">
+            <Commons:NoAutoSizeDecorator KeepHeight="True" MinWidth="200">
+                <TextBox Text="0123456789012345678901234567890123456789012345678901234567890123456789" />
+            </Commons:NoAutoSizeDecorator>
+        </HeaderedContentControl>
+
+    </ScrollViewer>
+</Window>

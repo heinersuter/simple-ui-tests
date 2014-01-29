@@ -1,0 +1,22 @@
+﻿<Window x:Class="InputControlWithDescription.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:InputControlWithDescription" Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="The Input Control" Width="160" />
+            <TextBlock Grid.Column="1" Text="The Description of the input control" />
+        </Grid>
+        <ItemsControl>
+            <TextBox Grid.Column="0" Text="The Input Control" Width="160" />
+            <TextBlock Grid.Column="1" Text="The Description of the input control" />
+        </ItemsControl>
+        <v:DescriptionControl Description="The Description of the input control">
+            <TextBox Grid.Column="0" Text="The Input Control" Width="160" />
+        </v:DescriptionControl>
+    </StackPanel>
+</Window>

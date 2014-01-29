@@ -1,0 +1,45 @@
+﻿<Window x:Class="SelectionColorOnLostFocus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{x:Static SystemColors.HighlightColor}"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{x:Static SystemColors.HighlightTextColor}"/>
+    </Window.Resources>
+
+    <UniformGrid Columns="2">
+        <ListBox>
+            <ListBox.Items>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem IsSelected="True">A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
+        <ListBox>
+            <ListBox.Items>
+                <ListBoxItem IsSelected="True">A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
+        <ListBox>
+            <ListBox.Items>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem IsSelected="True">A</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
+        <ListBox>
+            <ListBox.Items>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+                <ListBoxItem IsSelected="True">A</ListBoxItem>
+                <ListBoxItem>A</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
+    </UniformGrid>
+</Window>

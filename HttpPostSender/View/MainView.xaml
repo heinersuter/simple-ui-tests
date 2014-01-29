@@ -1,0 +1,74 @@
+﻿<Window x:Class="HttpPostSender.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HTTP POST Sender" 
+        Height="512" Width="1024" 
+        xmlns:my="clr-namespace:HttpPostSender.View"
+        xmlns:controls="clr-namespace:Commons.Controls;assembly=Commons">
+
+    <Window.DataContext>
+        <my:MainViewModel />
+    </Window.DataContext>
+
+    <DockPanel>
+        
+        <Expander DockPanel.Dock="Left" IsExpanded="True" ExpandDirection="Left">
+            <Expander.Header>
+                <TextBlock Text="Favorites" Style="{StaticResource VerticalRotationStyle}" UseLayoutRounding="True" />
+            </Expander.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="128" />
+                    <ColumnDefinition Width="*" MinWidth="8" />
+                </Grid.ColumnDefinitions>
+
+                <my:FavoriteListView Grid.Column="0" DataContext="{Binding FavoriteListViewModel}" Margin="0" />
+
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndCurrent" ResizeDirection="Columns" />
+
+            </Grid>
+        </Expander>
+
+        <WrapPanel DockPanel.Dock="Top" Margin="0 8 8 0">
+            <controls:ImageButton Command="{Binding SendCommand}" Text="Send" ImageSource="/View/images/SendInstantMessage_32x32.png" Margin="8 0 0 0" MinWidth="64" />
+            <controls:ImageButton Command="{Binding AddToFavoritesCommand}" Text="Favorites" ImageSource="/View/images/FavoriteStar_16x16.png" Margin="8 0 0 0" MinWidth="64" />
+        </WrapPanel>
+
+        <HeaderedContentControl DockPanel.Dock="Top" Header="URL" Margin="8 8 8 0" Style="{StaticResource HeaderOnTheTopStyle}">
+            <my:UrlView DataContext="{Binding UrlViewModel}" />
+        </HeaderedContentControl>
+
+        <Expander DockPanel.Dock="Bottom" Header="Output" IsExpanded="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="8" />
+                    <RowDefinition Height="Auto" MinHeight="64" />
+                </Grid.RowDefinitions>
+
+                <GridSplitter Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="CurrentAndNext" ResizeDirection="Rows" />
+
+                <my:OutputView Grid.Row="1" DataContext="{Binding OutputViewModel}" Margin="8 0 8 8" />
+
+            </Grid>
+        </Expander>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" MinHeight="64" />
+                <RowDefinition Height="Auto" MinHeight="8" />
+                <RowDefinition Height="*" MinHeight="64" />
+            </Grid.RowDefinitions>
+
+            <HeaderedContentControl Grid.Row="0" Header="Request" Margin="8 8 8 0" Style="{StaticResource HeaderOnTheTopStyle}">
+                <my:RequestView DataContext="{Binding RequestViewModel}" />
+            </HeaderedContentControl>
+
+            <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" />
+
+            <HeaderedContentControl Grid.Row="2" Header="Response" Margin="8 0 8 8" Style="{StaticResource HeaderOnTheTopStyle}">
+                <my:ResponseView DataContext="{Binding ResponseViewModel}" />
+            </HeaderedContentControl>
+
+        </Grid>
+    </DockPanel>
+</Window>

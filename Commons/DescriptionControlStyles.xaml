@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Commons="clr-namespace:Commons">
+
+    <Style x:Key="TextBlockDescriptionStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="ToolTip" Value="{Binding Text, RelativeSource={RelativeSource Self}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type Commons:DescriptionControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Commons:DescriptionControl}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <ContentPresenter Grid.Column="0" Content="{TemplateBinding Content}" />
+
+                            <Commons:NoAutoSizeDecorator Grid.Column="1" Margin="4 0 0 0">
+                                <TextBlock Text="{Binding Description, RelativeSource={RelativeSource AncestorType={x:Type Commons:DescriptionControl}}}"
+                                           Style="{StaticResource TextBlockDescriptionStyle}" />
+                            </Commons:NoAutoSizeDecorator>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

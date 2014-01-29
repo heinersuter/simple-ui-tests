@@ -1,0 +1,6 @@
+﻿<UserControl x:Class="ControlWithValidation.MyTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:v="clr-namespace:ControlWithValidation">
+    <TextBox Text="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type v:MyTextBox}}, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+</UserControl>

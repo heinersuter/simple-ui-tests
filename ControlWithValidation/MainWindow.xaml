@@ -1,0 +1,12 @@
+﻿<Window x:Class="ControlWithValidation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:ControlWithValidation" Title="MainWindow" Height="160" Width="160">
+    <StackPanel>
+        
+        <v:MyTextBox Text="{Binding StringValue, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="8"/>
+        
+        <Button Content="Save" Command="{Binding}" Margin="8" />
+        
+    </StackPanel>
+</Window>

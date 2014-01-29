@@ -1,0 +1,10 @@
+﻿<Window x:Class="WindowResizing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:WindowResizing="clr-namespace:WindowResizing"
+        Background="Black"
+        Title="MainWindow" 
+        SizeToContent="WidthAndHeight">
+
+    <WindowResizing:UserControl1 />
+
+</Window>

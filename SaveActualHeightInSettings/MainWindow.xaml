@@ -1,0 +1,20 @@
+﻿<Window x:Class="SaveActualHeightInSettings.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:saveActualHeightInSettings="clr-namespace:SaveActualHeightInSettings"
+    Title="MainWindow" Height="350" Width="525">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding RowHeight, Mode=OneTime}" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="32" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="Aqua" saveActualHeightInSettings:SizeObserver.Observe="True" saveActualHeightInSettings:SizeObserver.ObservedHeight="{Binding RowHeight, Mode=OneWayToSource}" />
+
+        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+
+        <Border Grid.Row="2" Background="Aqua" />
+
+    </Grid>
+</Window>

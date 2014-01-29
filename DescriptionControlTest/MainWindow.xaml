@@ -1,0 +1,14 @@
+﻿<Window x:Class="DescriptionControlTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Commons="clr-namespace:Commons;assembly=Commons"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Commons;component/Themes/Generic.xaml"/>
+    </Window.Resources>
+
+        <StackPanel>
+        <Commons:DescriptionControl Description="Hello World Description">
+            <TextBox Text="Hello" Width="128" x:Name="TextBox" />
+        </Commons:DescriptionControl>
+    </StackPanel>
+</Window>

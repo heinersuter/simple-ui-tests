@@ -1,0 +1,32 @@
+﻿<Window x:Class="Alsolos.RegexTester.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:View="clr-namespace:Alsolos.RegexTester.View"
+        xmlns:Controls="clr-namespace:Commons.Controls;assembly=Commons" 
+        Title=".NET Regex Tester" Height="512" Width="1024">
+
+    <Window.DataContext>
+        <View:MainWindowViewModel />
+    </Window.DataContext>
+
+    <DockPanel>
+        <Expander DockPanel.Dock="Right" ExpandDirection="Left" IsExpanded="True">
+            <Expander.Header>
+                <TextBlock Text="Help" Style="{StaticResource VerticalRotationStyle}" />
+            </Expander.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="8"/>
+                    <ColumnDefinition Width="Auto" MinWidth="64"/>
+                </Grid.ColumnDefinitions>
+                <GridSplitter Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="CurrentAndNext" ResizeDirection="Columns"/>
+                <WebBrowser Grid.Column="1" x:Name="_browser" />
+            </Grid>
+        </Expander>
+        
+        <ScrollViewer>
+            <View:MainView DataContext="{Binding MainViewModel}"/>
+        </ScrollViewer>
+    </DockPanel>
+
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="ControlPair.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="128" Width="256">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Commons;component/ItemsControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <StackPanel>
+
+        <ItemsControl Height="20" Style="{StaticResource PairControlFillLeftStyle}">
+            <Rectangle Fill="Red" Margin="8" />
+            <Rectangle Fill="Green" MinWidth="64" Margin="8" />
+        </ItemsControl>
+        
+        <ItemsControl Height="20" Style="{StaticResource PairControlFillRightStyle}">
+            <Rectangle Fill="Green" MinWidth="64" Margin="8" />
+            <Rectangle Fill="Red" Margin="8" />
+        </ItemsControl>
+        
+        <ItemsControl Height="20" Style="{StaticResource PairControlSymmetricStyle}">
+            <Rectangle Fill="Blue" Margin="8" />
+            <Rectangle Fill="Blue" Margin="8" />
+        </ItemsControl>
+        
+    </StackPanel>
+</Window>

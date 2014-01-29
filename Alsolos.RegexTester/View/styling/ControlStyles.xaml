@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <System:Double x:Key="MarginSize">8</System:Double>
+    <Thickness x:Key="DefaultMargin" Top="{StaticResource MarginSize}" Bottom="{StaticResource MarginSize}" Left="{StaticResource MarginSize}" Right="{StaticResource MarginSize}" />
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="MinWidth" Value="64" />
+    </Style>
+
+</ResourceDictionary>

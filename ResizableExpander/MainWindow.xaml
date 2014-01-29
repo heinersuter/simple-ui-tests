@@ -1,0 +1,88 @@
+﻿<Window x:Class="ResizableExpander.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+    <!-- http://stackoverflow.com/questions/8848329/put-resizable-expander-to-expand-from-right-to-left -->
+
+    <TabControl>
+        <TabItem Header="Left">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Expander Grid.Column="0" ExpandDirection="Right" HorizontalAlignment="Left">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="64"/>
+                            <ColumnDefinition Width="*" MinWidth="8"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="DarkGray" BorderThickness="8" Background="AliceBlue">
+                            <TextBlock Text="Lorem ipsum dolor sit"/>
+                        </Border>
+                        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndCurrent" ResizeDirection="Columns"/>
+                    </Grid>
+                </Expander>
+
+                <Border Grid.Column="1" BorderBrush="DarkGray" BorderThickness="8" Background="AliceBlue" />
+
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Bottom">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" BorderBrush="DarkGray" BorderThickness="8" Background="AliceBlue" />
+
+                <Expander Grid.Row="1" ExpandDirection="Up">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" MinHeight="8"/>
+                            <RowDefinition Height="Auto" MinHeight="64"/>
+                        </Grid.RowDefinitions>
+
+                        <GridSplitter Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="CurrentAndNext" ResizeDirection="Rows"/>
+
+                        <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="8" Background="AliceBlue" HorizontalAlignment="Stretch">
+                            <TextBlock Text="Lorem ipsum dolor sit"/>
+                        </Border>
+                    </Grid>
+                </Expander>
+
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Right">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" BorderBrush="DarkGray" BorderThickness="8" Background="AliceBlue" />
+
+                <Expander Grid.Column="1" ExpandDirection="Right" IsExpanded="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="8" />
+                            <ColumnDefinition Width="128" />
+                        </Grid.ColumnDefinitions>
+
+                        <GridSplitter Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="CurrentAndNext" ResizeDirection="Columns"/>
+
+                        <Border Grid.Column="1" BorderBrush="DarkGray" BorderThickness="8" Background="AliceBlue" HorizontalAlignment="Stretch">
+                            <!--<TextBlock Text="Lorem ipsum dolor sit"/>-->
+                        </Border>
+                    </Grid>
+                </Expander>
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

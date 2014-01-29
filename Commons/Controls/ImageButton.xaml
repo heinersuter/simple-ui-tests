@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Commons.Controls.ImageButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:Controls="clr-namespace:Commons.Controls">
+    
+    <Button Command="{Binding Command, RelativeSource={RelativeSource AncestorType=Controls:ImageButton}}" HorizontalContentAlignment="Stretch">
+        <DockPanel>
+            <Image Source="{Binding ImageSource, RelativeSource={RelativeSource AncestorType=Controls:ImageButton}}" 
+                Width="16" Height="16" DockPanel.Dock="Left" />
+            <TextBlock Text="{Binding Text, RelativeSource={RelativeSource AncestorType=Controls:ImageButton}}" TextAlignment="Center" Margin="4 0" />
+        </DockPanel>
+    </Button>
+
+</UserControl>

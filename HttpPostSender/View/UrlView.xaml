@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="HttpPostSender.View.UrlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+
+        <Controls:AutoCompleteBox Grid.Column="2" Text="{Binding Uri, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding History}" 
+            FilterMode="Contains" />
+
+</UserControl>

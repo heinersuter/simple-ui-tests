@@ -1,0 +1,15 @@
+﻿<Window x:Class="EnterpriseValidation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:EnterpriseValidation="clr-namespace:EnterpriseValidation" 
+        Title="MainWindow" Height="128" Width="256">
+    <Window.DataContext>
+        <EnterpriseValidation:MainViewModel />
+    </Window.DataContext>
+
+    <StackPanel>
+        <TextBox Text="{Binding Value, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="8" />
+        <TextBox Text="{Binding SomeValue.Value, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="8"
+             EnterpriseValidation:ValidationBinding.Property="{Binding SomeValue, ValidatesOnDataErrors=True}" />
+    </StackPanel>
+</Window>

@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Alsolos.RegexTester.View.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Commons="clr-namespace:Commons;assembly=Commons"
+             xmlns:Controls="clr-namespace:Commons.Controls;assembly=Commons">
+
+    <Grid MinWidth="256">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" MinHeight="8" />
+            <RowDefinition Height="2*" MinHeight="128" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" MinHeight="64" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <HeaderedContentControl Grid.Row="0" Header="Input Text" Style="{StaticResource HeaderOnTheTopStyle}" Margin="8 8 8 8">
+                <Commons:NoAutoSizeDecorator>
+                    <TextBox Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+                </Commons:NoAutoSizeDecorator>
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Grid.Row="1" Header="Regular Expression" Style="{StaticResource HeaderOnTheTopStyle}" Margin="8 0 8 8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Commons:NoAutoSizeDecorator Grid.Column="0" KeepHeight="True">
+                        <TextBox Text="{Binding RegexPattern, UpdateSourceTrigger=PropertyChanged}" HorizontalScrollBarVisibility="Auto" />
+                    </Commons:NoAutoSizeDecorator>
+                    <!--<Controls:ImageButton Grid.Column="1" Command="{Binding MainViewModel.ExecuteCommand}" ImageSource="/View/images/Execute.png" Text="Execute" Margin="8 0 0 0" />-->
+                    <Button Grid.Column="1" Command="{Binding ExecuteCommand}" Content="Execute" Margin="8 0 0 0" IsDefault="True" />
+                </Grid>
+            </HeaderedContentControl>
+
+        </Grid>
+
+        <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" />
+
+        <HeaderedContentControl Grid.Row="2" Header="Output" Style="{StaticResource HeaderOnTheTopStyle}" Margin="8 8 8 8">
+            <Commons:NoAutoSizeDecorator>
+                <TextBox Text="{Binding OutputText, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+            </Commons:NoAutoSizeDecorator>
+        </HeaderedContentControl>
+
+    </Grid>
+</UserControl>

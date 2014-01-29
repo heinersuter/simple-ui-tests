@@ -1,0 +1,40 @@
+﻿<Window x:Class="ExpandableGridControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:expandableGridControl="clr-namespace:ExpandableGridControl"
+        xmlns:control="clr-namespace:ExpandableGridControl.Control"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.DataContext>
+        <expandableGridControl:MainViewModel/>
+    </Window.DataContext>
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="8">
+            <Button Content="Expand all" Click="OnExpandAllClicked"/>
+            <Button Content="Collapse all" Click="OnCollapseAllClicked"/>
+        </StackPanel>
+
+        <control:HierarchicalDataGrid x:Name="_grid" HierarchicalDataGridItems="{Binding Items, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" IsReadOnly="True" Margin="8">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Company" Binding="{Binding Value.CompanyName}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Value.FirstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Value.LastName}"/>
+                <DataGridCheckBoxColumn Header="IsExpanded" Binding="{Binding IsExpanded}"/>
+                <DataGridCheckBoxColumn Header="IsParentExpanded" Binding="{Binding IsParentExpanded}"/>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}"/>
+            </DataGrid.Columns>
+        </control:HierarchicalDataGrid>
+
+        <ListBox ItemsSource="{Binding ElementName=_grid, Path=SelectedItems}" Margin="8">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Value.CompanyName}"/>
+                        <TextBlock Text="{Binding IsExpanded}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>

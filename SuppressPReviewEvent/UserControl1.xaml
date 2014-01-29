@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="SuppressPreviewEvent.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="LightSalmon">
+
+    <TextBox x:Name="_textBox" Width="128" VerticalAlignment="Center" Margin="8" />
+
+</UserControl>

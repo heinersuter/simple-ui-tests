@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfLocalizeExtensionTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:Properties="clr-namespace:WpfLocalizeExtensionTest.Properties"
+        
+        xmlns:Engine="clr-namespace:WPFLocalizeExtension.Engine;assembly=WPFLocalizeExtension" 
+        Engine:LocalizeDictionary.DesignCulture="de"
+        xmlns:l="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+        
+        Title="{l:LocText WpfLocalizeExtensionTest:Resources:WindowTitle}" 
+        Height="237" Width="322">
+
+    <Window.Resources>
+        <Properties:Resources x:Key="Res"/>
+    </Window.Resources>
+
+    <DockPanel>
+
+        <ToolBar DockPanel.Dock="Top">
+            <RadioButton Content="{l:LocText WpfLocalizeExtensionTest:Resources:LanguageOperatingSystem}" IsChecked="True" Click="OnButtonOsClick" />
+            <RadioButton Content="{l:LocText WpfLocalizeExtensionTest:Resources:LanguageDe}" Click="OnButtonDeClick" />
+            <RadioButton Content="{l:LocText WpfLocalizeExtensionTest:Resources:LanguageEn}" Click="OnButtonEnClick" />
+        </ToolBar>
+        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="200" Margin="4" Content="Text hard-coded in XAML" />
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="200" Margin="4" Content="{Binding StaticRes, Source={StaticResource Res}}" />
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="200" Margin="4" Content="{l:LocText WpfLocalizeExtensionTest:Resources:ExtensionRes}" />
+        </StackPanel>
+
+    </DockPanel>
+</Window>
