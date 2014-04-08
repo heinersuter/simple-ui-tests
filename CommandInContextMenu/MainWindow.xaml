@@ -1,0 +1,27 @@
+﻿<Window x:Class="CommandInContextMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:commandInContextMenu="clr-namespace:CommandInContextMenu"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <commandInContextMenu:CommandReference x:Key="WriteCommand" 
+            Command="{Binding WriteCommand, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+            CommandParameter="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+    </Window.Resources>
+
+    <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+        <DataGrid.RowStyle>
+            <Style TargetType="{x:Type DataGridRow}">
+                <Setter Property="ContextMenu">
+                    <Setter.Value>
+                        <ContextMenu>
+                            <MenuItem Header="Command" Command="{DynamicResource WriteCommand}"/>
+                        </ContextMenu>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </DataGrid.RowStyle>
+
+    </DataGrid>
+</Window>

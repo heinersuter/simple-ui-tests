@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputControlWithDescription", "InputControlWithDescription\InputControlWithDescription.csproj", "{5F52FD0B-2018-4962-8B02-5DA3AC60EEC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormattedNumberInput", "FormattedNumberInput\FormattedNumberInput.csproj", "{7AE139F9-C321-4D3E-8789-3BA981DBB30B}"
@@ -94,10 +96,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectionColorOnLostFocus",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpandableGridControl", "ExpandableGridControl\ExpandableGridControl.csproj", "{FAC4D5EC-8C11-49FB-BF6F-E0FB714D25EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandInContextMenu", "CommandInContextMenu\CommandInContextMenu.csproj", "{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = SimpleUiTests.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -497,6 +498,16 @@ Global
 		{FAC4D5EC-8C11-49FB-BF6F-E0FB714D25EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FAC4D5EC-8C11-49FB-BF6F-E0FB714D25EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FAC4D5EC-8C11-49FB-BF6F-E0FB714D25EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -531,6 +542,7 @@ Global
 		{E93C8E60-5FC2-4592-8ED5-4748D8D90D1C} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
 		{56C132FC-7D3E-4F4C-9CAA-0C4AEA94F6DD} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
 		{C985D226-4EEE-4EF9-996A-6F6498D3CB93} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
+		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
 		{0AB8D835-F957-40B0-BC85-1DFD66DB0ECF} = {3DFCE6F4-9000-4889-BE7F-4C484BDFF426}
 		{4D1E3889-32F1-4DD5-A7C9-C2586EFD199C} = {3DFCE6F4-9000-4889-BE7F-4C484BDFF426}
 		{06133F23-7F48-4750-A06E-AA2C42140C4B} = {3DFCE6F4-9000-4889-BE7F-4C484BDFF426}
@@ -541,6 +553,9 @@ Global
 		{4C7B03B2-268A-424F-9FA5-C87744EF4C0A} = {B4E6D971-C626-49EF-B2FF-4732BB80ED9F}
 		{C85CE427-F892-4520-9E4F-36E64C016A3C} = {B4E6D971-C626-49EF-B2FF-4732BB80ED9F}
 		{0769BD76-1449-4F7F-BDD4-FE688D599E11} = {B4E6D971-C626-49EF-B2FF-4732BB80ED9F}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SimpleUiTests.vsmdi
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
