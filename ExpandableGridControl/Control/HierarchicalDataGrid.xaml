@@ -1,12 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:control="clr-namespace:ExpandableGridControl.Control"
-                    xmlns:converters="clr-namespace:Alsolos.Commons.Mvvm.Converters;assembly=Alsolos.Commons">
+                    xmlns:commons="clr-namespace:Commons;assembly=Commons">
 
     <control:ListEmptyToVisibilityConverter x:Key="ListEmptyToVisibilityConverter"/>
     <control:ListEmptyToBrushConverter x:Key="ListEmptyToBrushConverter"/>
     <control:LevelToMarginConverter x:Key="LevelToMarginConverter"/>
-    <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <commons:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
 
     <ControlTemplate x:Key="ToggleButtonTemplate" TargetType="ToggleButton">
         <Border BorderThickness="1" BorderBrush="{Binding Children, Converter={StaticResource ListEmptyToBrushConverter}}" Background="White">

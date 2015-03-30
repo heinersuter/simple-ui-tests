@@ -1,0 +1,21 @@
+﻿<Window x:Class="ResizeNestedDelayed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="100000*" MinWidth="32" MaxWidth="128"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+                <Rectangle Grid.Column="1" Width="256" Height="128" Fill="GreenYellow" Margin="8"/>
+                <Rectangle Grid.Column="2" Fill="CornflowerBlue" Margin="8"/>
+
+        </Grid>
+    </ScrollViewer>
+
+</Window>

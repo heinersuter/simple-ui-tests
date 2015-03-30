@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="OnScreenKeyboard.Controls.IntKeyboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:OnScreenKeyboard.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance controls:IntKeyboardViewModel}">
+    <xctk:WindowContainer>
+        <xctk:ChildWindow WindowStyle="None" WindowStartupLocation="Center" WindowState="{Binding WindowState}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Width" Value="32"/>
+                        <Setter Property="Height" Value="32"/>
+                        <Setter Property="Margin" Value="2"/>
+                    </Style>
+                </Grid.Resources>
+                <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding Text}" IsReadOnly="True" TextAlignment="Right"/>
+                <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="0" Command="{Binding AppendCommand}" CommandParameter="0"/>
+                <Button Grid.Column="0" Grid.Row="3" Content="1" Command="{Binding AppendCommand}" CommandParameter="1"/>
+                <Button Grid.Column="1" Grid.Row="3" Content="2" Command="{Binding AppendCommand}" CommandParameter="2"/>
+                <Button Grid.Column="2" Grid.Row="3" Content="3" Command="{Binding AppendCommand}" CommandParameter="3"/>
+                <Button Grid.Column="0" Grid.Row="2" Content="4" Command="{Binding AppendCommand}" CommandParameter="4"/>
+                <Button Grid.Column="1" Grid.Row="2" Content="5" Command="{Binding AppendCommand}" CommandParameter="5"/>
+                <Button Grid.Column="2" Grid.Row="2" Content="6" Command="{Binding AppendCommand}" CommandParameter="6"/>
+                <Button Grid.Column="0" Grid.Row="1" Content="7" Command="{Binding AppendCommand}" CommandParameter="6"/>
+                <Button Grid.Column="1" Grid.Row="1" Content="8" Command="{Binding AppendCommand}" CommandParameter="8"/>
+                <Button Grid.Column="2" Grid.Row="1" Content="9" Command="{Binding AppendCommand}" CommandParameter="9"/>
+                <Button Grid.Column="3" Grid.Row="1" Content="&lt;-" Command="{Binding BackspaceCommand}"/>
+                <Button Grid.Column="3" Grid.Row="2" Content="C" Command="{Binding ClearCommand}"/>
+                <Button Grid.Column="3" Grid.Row="3" Content="ESC" Command="{Binding EscCommand}"/>
+                <Button Grid.Column="3" Grid.Row="4" Content="OK" Command="{Binding OkCommand}"/>
+            </Grid>
+        </xctk:ChildWindow>
+    </xctk:WindowContainer>
+</UserControl>
