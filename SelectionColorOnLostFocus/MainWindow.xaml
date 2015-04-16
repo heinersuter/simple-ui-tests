@@ -4,42 +4,13 @@
         Title="MainWindow" Height="350" Width="525">
 
     <Window.Resources>
-        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{x:Static SystemColors.HighlightColor}"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Red"/>
         <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{x:Static SystemColors.HighlightTextColor}"/>
     </Window.Resources>
 
     <UniformGrid Columns="2">
-        <ListBox>
-            <ListBox.Items>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem IsSelected="True">A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-            </ListBox.Items>
-        </ListBox>
-        <ListBox>
-            <ListBox.Items>
-                <ListBoxItem IsSelected="True">A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-            </ListBox.Items>
-        </ListBox>
-        <ListBox>
-            <ListBox.Items>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem IsSelected="True">A</ListBoxItem>
-            </ListBox.Items>
-        </ListBox>
-        <ListBox>
-            <ListBox.Items>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-                <ListBoxItem IsSelected="True">A</ListBoxItem>
-                <ListBoxItem>A</ListBoxItem>
-            </ListBox.Items>
-        </ListBox>
+        <ListBox ItemsSource="{Binding Items1}" SelectedIndex="{Binding SelectedIndex1, Mode=TwoWay}"/>
+        <ListBox ItemsSource="{Binding Items2}" SelectedIndex="{Binding SelectedIndex2, Mode=TwoWay}"/>
+        <TextBox Text="{Binding SelectedItem}" VerticalAlignment="Center"/>
     </UniformGrid>
 </Window>
