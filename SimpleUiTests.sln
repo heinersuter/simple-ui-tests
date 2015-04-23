@@ -102,6 +102,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnScreenKeyboard", "OnScree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizeNestedDelayed", "ResizeNestedDelayed\ResizeNestedDelayed.csproj", "{BEA32D0D-F175-44C3-B418-843764E5CE12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -532,6 +534,16 @@ Global
 		{BEA32D0D-F175-44C3-B418-843764E5CE12}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BEA32D0D-F175-44C3-B418-843764E5CE12}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BEA32D0D-F175-44C3-B418-843764E5CE12}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -579,6 +591,7 @@ Global
 		{CCDAEBCB-B20B-4EED-BB0E-E23240B5C7D5} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
 		{D82C2F39-03F6-4694-83C6-41371736DE11} = {7D9C3624-9758-4960-9A51-A900B9ABE890}
 		{BEA32D0D-F175-44C3-B418-843764E5CE12} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
+		{3C5513C9-1079-4C9F-8C2A-CAF187A0D774} = {DDD41498-A5E2-4528-847F-530A9BA994F4}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = SimpleUiTests.vsmdi
